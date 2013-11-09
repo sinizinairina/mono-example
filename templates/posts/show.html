@@ -1,0 +1,22 @@
+<p id="notice"><%= @flash 'notice' %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @post.text %>
+</p>
+
+<h2>Comments</h2>
+<% for comment in @post.comments : %>
+<%- @render '/comments/comment', comment: comment %>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%- @render '/comments/form' %>
+
+<%- @link 'Edit', app.editPostPath(@post) %> |
+<%- @link 'Back', app.postsPath() %>

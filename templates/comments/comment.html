@@ -1,0 +1,8 @@
+<p>
+  <b>Comment:</b>
+  <%= @comment.text %>
+</p>
+
+<p>
+  <%- @link 'Destroy Comment', app.postCommentPath(@post, @comment), method: 'delete', confirm: 'Are you sure?' %>
+</p>

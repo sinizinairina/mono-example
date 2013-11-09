@@ -1,0 +1,24 @@
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% for post in @posts : %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.text %></td>
+    <td><%- @link 'Show', app.postPath(post) %></td>
+    <td><%- @link 'Edit', app.editPostPath(post) %></td>
+    <td><%- @link 'Destroy', app.postPath(post), method: 'delete', confirm: 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%- @link 'New Post', app.newPostPath() %>

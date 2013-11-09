@@ -1,0 +1,5 @@
+<h1>New post</h1>
+
+<%- @render '/posts/form', action: app.postsPath(), method: 'post', button: 'Create Post' %>
+
+<%- @link 'Back', app.postsPath() %>

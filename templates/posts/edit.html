@@ -1,0 +1,6 @@
+<h1>Editing post</h1>
+
+<%- @render '/posts/form', action: app.postPath(@post), method: 'put', button: 'Update Post' %>
+
+<%- @link 'Show', app.postPath(@post) %> |
+<%- @link 'Back', app.postsPath() %>

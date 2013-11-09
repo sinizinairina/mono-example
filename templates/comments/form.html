@@ -1,0 +1,9 @@
+<%= @formTag action: app.postCommentsPath(@post), method: 'post', -> %>
+  <div class="field">
+    <label for="text">Text</label><br/>
+    <textarea id="text" name="text" cols="40" rows="20"></textarea>
+  </div>
+  <div class="actions">
+    <button type="submit">Comment</button>
+  </div>
+<% end %>

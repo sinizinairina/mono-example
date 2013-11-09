@@ -1,0 +1,24 @@
+<%= @formTag action: @action, method: @method, => %>
+  <% if (size = app._(@post.errors).size()) > 0 : %>
+    <div id="error_explanation">
+      <h2><%= @pluralize(size, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% for message in @errorMessages(@post.errors) : %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label for="title">Title</label><br/>
+    <input id="title" name="title" value="<%= @post.title %>" size="30" type="text" />
+  </div>
+  <div class="field">
+    <label for="text">Text</label><br/>
+    <textarea id="text" name="text" cols="40" rows="20"><%= @post.text %></textarea>
+  </div>
+  <div class="actions">
+     <button type="submit"><%= @button %></button>
+  </div>
+<% end %>
