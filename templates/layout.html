@@ -7,9 +7,14 @@
   <body>
     <%- @content %>
 
+    <div class="hint">
+      Use admin / admin to login.<br/>
+      <a href="https://github.com/sinizinairina/mono-example">Sources</a>
+    </div>
+
     <!-- Scripts. -->
     <script src="<%= app.assetPath '/jquery.js' %>" type="text/javascript"></script>
     <script src="<%= app.assetPath '/jquery.ujs.js' %>" type="text/javascript"></script>
-    <script src="<%= app.assetPath '/cssrefresh.js' %>" type="text/javascript"></script>
+    <!-- <script src="<%= app.assetPath '/cssrefresh.js' %>" type="text/javascript"></script> -->
   </body>
 </html>

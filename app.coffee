@@ -11,7 +11,7 @@ app.configure __dirname
 # Configuring application, use environment variables to override it.
 env = process.env
 app.brand         = env.brand         || 'Blog'
-app.dbPath        = env.dbPath        || "mongodb://localhost/blog#{app.environment}"
+app.dbPath        = env.dbPath        || "mongodb://localhost/mono-example-#{app.environment}"
 app.sessionKey    = env.sessionKey    || 'Blog'
 app.sessionSecret = env.sessionSecret || 'dummy secret'
 app.login         = env.login         || 'admin'
@@ -20,7 +20,7 @@ app.password      = env.password      || 'admin'
 # Assembling application.
 app.requireDirectory "#{__dirname}/controllers", watch: true, onDemand: true
 app.requireDirectory "#{__dirname}/models",      watch: true, onDemand: true
-app.requireDirectory "#{__dirname}/helpers",     watch: true
+# app.requireDirectory "#{__dirname}/helpers",     watch: true
 app.render.directories.push "#{__dirname}/templates"
 
 # Configuring http, lazy loading.

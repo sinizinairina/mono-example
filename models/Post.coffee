@@ -1,7 +1,7 @@
 class app.Post extends app.Model
   @collection 'posts'
 
-  @validations:
+  @validations
     title : (v) -> "can't be blank" if _(v).isBlank()
     text  : (v) -> "can't be blank" if _(v).isBlank()
 
@@ -12,7 +12,7 @@ class app.Post extends app.Model
 
 # Comment, nested model.
 class app.Post.Comment extends app.Model
-  @validations:
+  @validations
     text: (v) -> "can't be blank" if _(v).isBlank()
 
   constructor: (attrs) ->
