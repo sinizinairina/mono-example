@@ -2,6 +2,6 @@
   "name": "mono-example",
   "version": "1.0.0",
   "dependencies": {
-    "mono": "1.0.1"
+    "mono": "1.0.2"
   }
 }
