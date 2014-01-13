@@ -40,3 +40,8 @@ app.after 'http', (http) ->
 
 # Starting http server.
 app.http.run() if process.argv[1] == __filename
+
+# Catching uncaught eerrors if any.
+process.on 'uncaughtException', (error) ->
+  console.log error.message || error
+  console.log error.stack
