@@ -1,5 +1,7 @@
 Blog example for MonoJS Web Framework
 
+Demo http://example.monojs.org
+
 # Installation
 
 1 Install and start MongoDB
