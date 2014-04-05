@@ -31,6 +31,10 @@ Run benchmark `siege -b -t10s -c100 http://localhost:3000`
 
 # Ignore this seciont
 
-How to start in on server
+How to start in on the server
 
 `port=3001 nohup node_modules/coffee-script/bin/coffee app.coffee > /dev/null 2> /dev/null < /dev/null &`
+
+nohup /apps/arachnid/scripts/startForever > /dev/null 2> /dev/null < /dev/null &
+npm install forever -g
+forever stop scripts/app.js

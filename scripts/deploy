@@ -1,0 +1,24 @@
+#!/bin/bash
+
+HOST='monojs.org'
+APP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+
+echo "deploying '$APP_DIR' to '$HOST/apps/mono-example'"
+
+echo "checking out latest version to 'root@$HOST:/apps/mono-example'"
+ssh root@$HOST "cd /apps/mono-example && git fetch --all && git reset --hard origin/master" || exit 1
+
+echo "installing npm modules"
+ssh root@$HOST "cd /apps/mono-example && npm install" || exit 1
+
+echo "stopping server"
+ssh root@$HOST "/apps/mono-example/scripts/stopForever"
+
+echo "starting server"
+# Need `/dev/null` because othervise ssh won't be released.
+ssh root@$HOST "nohup /apps/mono-example/scripts/startForever > /dev/null 2> /dev/null < /dev/null &"
+
+echo "log tail"
+ssh root@$HOST "tail -n 40 /logs/mono-example.log" || exit 1
+
+say 'Successfully deployed.' --voice Victoria

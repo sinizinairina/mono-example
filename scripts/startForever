@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Changing current dir.
+cd /apps/mono-example
+
+export port=3001
+export environment=production
+
+forever start -a -l /logs/forever.log -o /logs/mono-example.log -e /logs/mono-example.log scripts/app.js

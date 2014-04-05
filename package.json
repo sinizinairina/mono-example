@@ -2,6 +2,7 @@
   "name": "mono-example",
   "version": "1.0.0",
   "dependencies": {
-    "mono": "1.0.2"
+    "mono": "1.0.x",
+    "coffee-script": "1.7.x"
   }
 }
