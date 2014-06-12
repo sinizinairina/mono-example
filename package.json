@@ -1,8 +1,8 @@
 {
   "name": "mono-example",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
-    "mono": "1.0.x",
+    "mono": "1.3.6",
     "coffee-script": "1.7.x"
   }
 }

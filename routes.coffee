@@ -1,7 +1,6 @@
 {app, _} = require 'mono'
 
-app.router.configure (map) ->
-  map.get '/', controller: 'Posts', action: 'index'
+app.router.get '/', controller: 'Posts', action: 'index'
 
-  map.resource 'posts', (posts) ->
-    posts.resource 'comments'
+app.router.resource 'posts', (posts) ->
+  posts.resource 'comments'

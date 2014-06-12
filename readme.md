@@ -1,6 +1,6 @@
 Blog example for MonoJS Web Framework
 
-Demo http://example.monojs.org
+<!-- Demo http://example.monojs.org -->
 
 # Installation
 
@@ -29,7 +29,9 @@ and create couple of blog posts there.
 
 Run benchmark `siege -b -t10s -c100 http://localhost:3000`
 
-# Ignore this seciont
+<!--
+
+# Ignore this section
 
 How to start in on the server
 
@@ -38,3 +40,5 @@ How to start in on the server
 nohup /apps/arachnid/scripts/startForever > /dev/null 2> /dev/null < /dev/null &
 npm install forever -g
 forever stop scripts/app.js
+
+-->
